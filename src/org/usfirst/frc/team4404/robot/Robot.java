@@ -1,6 +1,7 @@
 
 package org.usfirst.frc.team4404.robot;
 
+import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
@@ -27,6 +28,9 @@ public class Robot extends IterativeRobot {
 	 */
 	public void robotInit() {
 		oi = new OI();
+		
+		CameraServer.getInstance().setQuality(50);
+		CameraServer.getInstance().startAutomaticCapture("cam0");
 	}
 
 	/**

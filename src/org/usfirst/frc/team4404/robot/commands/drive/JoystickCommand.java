@@ -8,17 +8,16 @@ import edu.wpi.first.wpilibj.command.Command;
 public class JoystickCommand extends Command {
 
 	private RobotDrive drive;
-	
+
 	/**
 	 * Drives the robot using the joystick.
 	 */
 	public JoystickCommand() {
+		requires(Robot.driveSubsystem);
 	}
 
 	@Override
 	protected void initialize() {
-		requires(Robot.driveSubsystem);
-
 		drive = Robot.driveSubsystem.getDrive();
 	}
 

@@ -13,20 +13,21 @@ public class BackwardCommand extends Command {
 	 * A command that drives full speed backwards.
 	 */
 	public BackwardCommand() {
+		requires(Robot.driveSubsystem);
 	}
-	
+
 	/**
 	 * A command that drives at a specified speed backwards.
 	 * @param speed speed for robot to move at.
 	 */
 	public BackwardCommand(double speed) {
+		requires(Robot.driveSubsystem);
+
 		this.speed = speed;
 	}
 
 	@Override
 	protected void initialize() {
-		requires(Robot.driveSubsystem);
-
 		drive = Robot.driveSubsystem.getDrive();
 	}
 

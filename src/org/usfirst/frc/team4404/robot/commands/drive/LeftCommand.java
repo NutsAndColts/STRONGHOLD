@@ -6,28 +6,29 @@ import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.command.Command;
 
 public class LeftCommand extends Command {
-	
+
 	private RobotDrive drive;
 	private double speed = 1;
-	
+
 	/**
 	 * A command that turns full speed to the left.
 	 */
 	public LeftCommand() {
+		requires(Robot.driveSubsystem);
 	}
-	
+
 	/**
 	 * A command that turns at a specified speed to the left.
 	 * @param speed speed for robot to move at.
 	 */
 	public LeftCommand(double speed) {
+		requires(Robot.driveSubsystem);
+		
 		this.speed = speed;
 	}
 
 	@Override
 	protected void initialize() {
-		requires(Robot.driveSubsystem);
-		
 		drive = Robot.driveSubsystem.getDrive();
 	}
 

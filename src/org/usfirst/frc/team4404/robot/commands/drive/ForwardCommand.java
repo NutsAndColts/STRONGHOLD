@@ -8,25 +8,26 @@ public class ForwardCommand extends Command {
 
 	private RobotDrive drive;
 	private double speed = 1;
-	
+
 	/**
 	 * A command that drives full speed forwards.
 	 */
 	public ForwardCommand() {
+		requires(Robot.driveSubsystem);
 	}
-	
+
 	/**
 	 * A command that drives at a specified speed forwards.
 	 * @param speed speed for robot to move at.
 	 */
 	public ForwardCommand(double speed) {
+		requires(Robot.driveSubsystem);
+
 		this.speed = speed;
 	}
 
 	@Override
 	protected void initialize() {
-		requires(Robot.driveSubsystem);
-
 		drive = Robot.driveSubsystem.getDrive();
 	}
 

@@ -6,21 +6,24 @@ import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.command.Command;
 
 public class RightCommand extends Command {
-	
+
 	private RobotDrive drive;
 	private double speed = 1;
-	
+
 	/**
 	 * A command that turns full speed to the right.
 	 */
 	public RightCommand() {
+		requires(Robot.driveSubsystem);
 	}
-	
+
 	/**
 	 * A command that turns at a specified speed to the right.
 	 * @param speed speed for robot to move at.
 	 */
 	public RightCommand(double speed) {
+		requires(Robot.driveSubsystem);
+		
 		this.speed = speed;
 	}
 
